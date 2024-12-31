@@ -1,0 +1,682 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100vw; /* Ensure header takes full viewport width */
+    left: 0; /* Align to the left edge */
+}
+
+.container {
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto; /* Center the container */
+    padding: 1rem;
+    width: 100%; /* Ensure container takes full width */
+}
+
+.sidebar {
+    position: fixed; /* Make the sidebar fixed */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    height: 100vh; /* Make it span the full viewport height */
+    width: 250px; /* Maintain the original width */
+    background-color: #f5f5f5;
+    margin-top: 120px;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; /* Allow scrolling within the sidebar if content overflows */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 4rem;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #007bff;
+}
+
+.content {
+    flex: 1;
+    padding: 1rem;
+    margin-left: 250px; /* Match the sidebar's width */
+}
+
+/* Button styles */
+#togglePostForm {
+    display: inline-block;
+    margin-left: 50px;
+    padding: 0.8rem 1.5rem;
+    background-color: #007bff17; /* Updated background color */
+    color: #000; /* Updated text color */
+    border: none;
+    border-radius: 50px; /* Make the button pill-shaped */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#togglePostForm:hover {
+    background-color: #0056b3; /* Optional: Change hover color if needed */
+    color: #fff; /* Optional: Change text color on hover if needed */
+}
+
+/* Additional styles... */
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a,
+nav ul a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a img {
+    width: 20px; /* Adjust the size of the icons */
+    height: 20px; /* Adjust the size of the icons */
+    margin-right: 0.5rem; /* Space between the icon and the text */
+}
+
+nav ul a:hover {
+    color: #007bff;
+}
+
+/* Form styles */
+.post-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post-form h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: 500;
+    color: #555;
+}
+
+input[type="text"],
+textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    background-color: #ff450d;
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Make the button pill-shaped */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Blog posts section */
+.blog-posts {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.blog-posts h2 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Updated blog card styles */
+.blog-posts .card {
+    display: flex;
+    flex-direction: row-reverse; /* Image on the right */
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center; /* Align items vertically in the center */
+}
+
+.blog-posts .card img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-left: 1px solid #ddd; /* Border on the left */
+    align-self: center; /* Vertically center the image */
+}
+
+.blog-posts .card-content {
+    padding: 15px;
+    flex: 1;
+    margin-right: 15px; /* Add margin to the right of the content */
+}
+
+.blog-posts .card-content h3 {
+    margin: 0; /* Remove extra whitespace above the title */
+    padding-top: 0; /* Ensure no padding above the title */
+    font-size: 2.5rem; /* Increase the font size of the post title */
+}
+
+.blog-posts .card-content p {
+    white-space: pre-wrap; /* Preserve whitespace and handle multiline content */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure long words break to fit within the card */
+    margin-top: 0; /* Ensure the text starts from where the image ends */
+    hyphens: auto; /* Add hyphens to break words at appropriate points */
+    display: block; /* Ensure block display for proper wrapping */
+    width: calc(100% - 180px); /* Ensure the content takes the full width of the card minus the image width and some margin */
+    margin-right: 0; /* Remove margin to the right of the content */
+}
+
+.blog-posts .card-content .button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px; /* Space above the buttons */
+}
+
+.blog-posts .explore-button {
+    padding: 0.5rem 1rem;
+    background-color: #ff450d; /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Pill-shaped button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blog-posts .explore-button:hover {
+    background-color: #e03e00; /* Darker orange on hover */
+}
+
+article {
+    background-color: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+article h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+article p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Edit and Delete buttons */
+article form {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+article button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 50px; /* Make the button pill-shaped */
+}
+
+article form:last-child button {
+    background-color: #dc3545;
+}
+
+article form:last-child button:hover {
+    background-color: #c82333;
+}
+
+/* Footer styles */
+footer {
+    width: 100vw; /* Ensure footer takes full viewport width */
+    height: 50px; /* Adjust height as needed */
+    background-color: #333;
+    border-top: 1px solid #ddd;
+    text-align: center;
+   
+    margin-top: auto; /* Push the footer to the bottom */
+    left: 0; /* Align to the left edge */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .post-form,
+    .blog-posts {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    article {
+        padding: 1.5rem;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Hide the sidebar off-screen */
+        width: 250px;
+        height: 100vh;
+        background-color: #f5f5f5;
+        margin-top: 0;
+        padding: 1rem;
+        border-right: 1px solid #ddd;
+        transition: left 0.3s ease;
+        z-index: 100; /* Ensure the sidebar is above other elements */
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .sidebar ul li {
+        margin: 1rem 0;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .card {
+        flex-direction: column; /* Stack the content vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+        text-align: left;
+        padding: 15px; /* Add padding for spacing */
+        width: 100%; /* Ensure the card takes full width */
+    }
+
+    .card img {
+        width: 100%; /* Let the image take the full width */
+        height: auto;
+        margin-bottom: 10px; /* Add space between the image and content */
+    }
+
+    .card-content {
+        margin-left: 0; /* Remove left margin */
+        width: 100%; /* Ensure content takes full width */
+        padding: 0; /* Adjust padding if needed */
+    }
+
+    .card-content p {
+        white-space: normal; /* Ensure text wraps normally */
+        word-wrap: break-word; /* Handle long words */
+        overflow-wrap: break-word;
+        hyphens: auto; /* Break words with hyphens */
+        margin-right: 0; /* Ensure no right margin */
+        display: block; /* Maintain block-level display */
+        font-size: 1rem; /* Adjust font size for better readability */
+    }
+
+    .sidebar-toggle {
+        display: block; /* Show the toggle button on mobile devices */
+    }
+
+    .sidebar.open {
+        left: 0; /* Show the sidebar when open */
+    }
+
+    .blog-posts .card img {
+        width: 50%; /* Adjust the image width to 50% */
+        height: auto;
+        object-fit: cover;
+        border-right: 1px solid #ddd;
+        align-self: center; /* Vertically center the image */
+    }
+
+    .blog-posts .card-content {
+        width: 50%; /* Adjust the content width to 50% */
+        padding: 15px;
+        flex: 1;
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .blog-posts .card-content p {
+        width: 100%; /* Ensure the content takes the full width */
+    }
+}
+
+/* Blog card styles */
+.card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all 0.8s ease-in-out;
+}
+
+.card img {
+    max-width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: 20px;
+    align-self: flex-start;
+}
+
+.blog-content {
+    max-height: 0;
+    opacity: 0;
+    margin: 15px 0;
+    line-height: 1.6;
+    color: #333;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.blog-content.expanded {
+    max-height: 1000px; /* More flexible value */
+    opacity: 1;
+    padding: 15px 0;
+    visibility: visible; /* Ensure visibility is on */
+}
+
+/* Add this to your CSS */
+html, body {
+    height: 100%; /* Ensure the html and body take up the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1; /* Allow the main content area to grow and push the footer down */
+}
+
+footer {
+    width: 100%;
+    background-color: #333;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Ensure the footer sticks to the bottom of the page */
+    color: white;
+}
+
+.prewritten-blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.blog-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: skew(-5deg);
+}
+
+.blog-card h2 {
+    margin-top: 0;
+}
+
+/* About page styles */
+.about-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    color: #ff450d; /* Change to orange */
+    margin-bottom: 1.5rem;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: #ff450d; /* Change to orange */
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.about-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.about-section a:hover {
+    text-decoration: underline;
+}
+
+/* Contact page styles */
+.contact-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 2.5rem;
+    color: #ff450d; /* Change to orange */
+    margin-bottom: 1.5rem;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    color: #ff450d; /* Change to orange */
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.contact-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Updated blog card styles */
+.blog-posts .card {
+    display: flex;
+    flex-direction: row-reverse; /* Image on the right */
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center; /* Align items vertically in the center */
+}
+
+.blog-posts .card img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-left: 1px solid #ddd; /* Border on the left */
+    align-self: center; /* Vertically center the image */
+}
+
+.blog-posts .card-content {
+    padding: 15px;
+    flex: 1;
+    margin-right: 15px; /* Add margin to the right of the content */
+}
+
+.blog-posts .card-content h3 {
+    margin: 0; /* Remove extra whitespace above the title */
+    padding-top: 0; /* Ensure no padding above the title */
+    font-size: 2.5rem; /* Increase the font size of the post title */
+}
+
+.blog-posts .card-content p {
+    white-space: pre-wrap; /* Preserve whitespace and handle multiline content */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure long words break to fit within the card */
+    margin-top: 0; /* Ensure the text starts from where the image ends */
+    hyphens: auto; /* Add hyphens to break words at appropriate points */
+    display: block; /* Ensure block display for proper wrapping */
+    width: calc(100% - 180px); /* Ensure the content takes the full width of the card minus the image width and some margin */
+    margin-right: 0; /* Remove margin to the right of the content */
+}
+
+.blog-posts .card-content .button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px; /* Space above the buttons */
+}
+
+.blog-posts .explore-button {
+    padding: 0.5rem 1rem;
+    background-color: #ff450d; /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Pill-shaped button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blog-posts .explore-button:hover {
+    background-color: #e03e00; /* Darker orange on hover */
+}
+
+.sidebar-toggle {
+    display: none; /* Hide the toggle button by default */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 101; /* Ensure the button is above other elements */
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <%- include('partials/header.ejs') %>
+
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/nature" data-page="nature">Nature</a></li>
+                <li><a href="/technology" data-page="technology">Technology</a></li>
+                <li><a href="/space" data-page="space">Space</a></li>
+                <li><a href="/sports" data-page="sports">Sports</a></li>
+                <li><a href="/games" data-page="games">Games</a></li>
+                <li><a href="/movies" data-page="movies">Movies</a></li>
+                <li><a href="/education" data-page="education">Education</a></li>
+                <li><a href="/medical" data-page="medical">Medical</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section class="contact-section">
+                <h1>Contact Us</h1>
+                <p>If you have any questions, feedback, or just want to get in touch, feel free to reach out to us through the following channels:</p>
+                <h2>Email</h2>
+                <p>You can email us at <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dhruvmali345@gmail.com" target="_blank">dhruvmali345@gmail.com</a></p>
+                <h2>LinkedIn</h2>
+                <p>Connect with us on LinkedIn: <a href="https://www.linkedin.com/in/dhruv-mali-38b519280/" target="_blank">Linked IN !!</a></p>
+                <h2>Other Social Media</h2>
+                <p>Follow us on Twitter: <a href="https://x.com/DhruvMali17" target="_blank">@DhruvMali17</a></p>
+                
+                <p>Follow us on Instagram: <a href="https://www.instagram.com/justtdhruvv/" target="_blank">@justtdhruvv</a></p>
+                
+                <h2>Contact Request Form</h2>
+                <form action="/submit-contact-request" method="POST">
+                    <label for="contactName">Name</label>
+                    <input type="text" id="contactName" name="contactName" required>
+                    
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" name="contactEmail" required>
+                    
+                    <label for="contactPhone">Mobile Number</label>
+                    <input type="tel" id="contactPhone" name="contactPhone" required>
+                    
+                    <button type="submit">Submit Request</button>
+                </form>
+
+                <% if (message) { %>
+                    <p><%= message %></p>
+                <% } %>
+
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2023 Blog Web Application. All rights reserved.</p>
+    </footer>
+    </footer>
+</body>
+</html>
+
+</body>
+</html>

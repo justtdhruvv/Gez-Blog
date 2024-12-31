@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The GenZ Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <%- include('partials/header.ejs') %>
+
+    <button class="sidebar-toggle">☰</button> <!-- Add toggle button -->
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+              
+                <li><a href="/nature" data-page="nature">Nature</a></li>
+                <li><a href="/technology" data-page="technology">Technology</a></li>
+                <li><a href="/space" data-page="space">Space</a></li>
+                <li><a href="/sports" data-page="sports">Sports</a></li>
+                <li><a href="/games" data-page="games">Games</a></li>
+                <li><a href="/movies" data-page="movies">Movies</a></li>
+                <li><a href="/education" data-page="education">Education</a></li>
+                <li><a href="/medical" data-page="medical">Medical</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content --> 
+        <main class="content" id="mainContent">
+            <!-- Create and Edit Post Buttons -->
+            <div id="actionButtons">
+                <button id="createPostButton">Create New Post</button>
+            </div>
+
+            <!-- Post Form Section -->
+            <section id="postForm" style="display: none;">
+                <h2 id="formHeading">Create a New Post</h2>
+                <form id="postFormElement" action="/submit-post" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" id="postId" name="postId">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" rows="5" required></textarea>
+
+                    <label for="photo">Photo</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+
+                    <button type="submit">Submit Post</button>
+                </form>
+            </section>
+
+            <!-- Blog Posts Section -->
+            <section class="blog-posts">
+                <h2>Latest Posts</h2>
+
+                <% if (userPost.length > 0) { %>
+                    <% userPost.forEach(function(post) { %>
+                        <div class="card" id="blog-<%= post.id %>">
+                            <% if (post.postPhoto) { %>
+                                <img src="<%= post.postPhoto %>" alt="Post Image">
+                            <% } %>
+                            <div class="card-content">
+                                <h3><%= post.postTitle %></h3>
+                                <div class="blog-content hidden">
+                                    <p><%= post.postContent %></p>
+                                </div>
+                                <div class="button-group">
+                                    <button class="explore-button" onclick="expandBlog('<%= post.id %>')">Explore More</button>
+                                    <!-- Edit and Delete Buttons -->
+                                    <button class="edit-button" data-id="<%= post.id %>" data-title="<%= post.postTitle %>" data-content="<%= post.postContent %>">Edit</button>
+                                    <form action="/delete-post/<%= post.id %>" method="POST" style="display: inline;">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No posts submitted yet. Create your first post!</p>
+                <% } %>
+            </section>
+
+            <!-- Prewritten Posts Section -->
+            <section class="prewritten-posts">
+                <h2>Featured Posts</h2>
+                <div class="card" id="blog-1">
+                    <div class="card-content">
+                        <h3>5 Life-Changing Books That Everyone Should Read Before 26 📖✨</h3>
+                        <div class="blog-content hidden">
+                            <p>Turning 26 is like stepping into the "I'm-still-figuring-it-out" chapter of life, but with a touch more confidence. 😉 Why not let these books be your guide? Grab a coffee ☕, snuggle up in your coziest blanket 🦶, and let's dive in!</p>
+                            <p><strong>"Atomic Habits" by James Clear</strong><br>Small changes = Big impact! This book teaches you how to build better habits and break the bad ones. Perfect for those moments when procrastination – aka scrolling TikTok for hours 🕳️ – takes over.</p>
+                            <p><strong>"The Alchemist" by Paulo Coelho</strong><br>A magical tale about following your dreams – no matter how far they seem. ✨ This is the ultimate vibes check for anyone feeling stuck or uninspired.</p>
+                            <p><strong>"Untamed" by Glennon Doyle</strong><br>Glennon says it’s time to stop people-pleasing and start living boldly! This one’s a game-changer for embracing your inner wild 🌿.</p>
+                            <p><strong>"The Subtle Art of Not Giving a F*" by Mark Manson</strong><br>Tired of caring too much about what others think? Mark’s got you covered with a no-nonsense, relatable AF take on life.</p>
+                            <p><strong>"You Are a Badass" by Jen Sincero</strong><br>Need a pep talk but in book form? This one’s like having a bestie telling you, "You’ve got this!" 🏋‍♂️✨</p>
+                            <p>Life’s too short for boring reads. Which of these will you start first? Let me know in the comments! 🙋‍♂️</p>
+                        </div>
+                        <button class="explore-button" onclick="expandBlog(1)">Explore More</button>
+                    </div>
+                    <img src="/images/prewritten/freepik__expand__41276.jpeg" alt="Nature Image" class="card-image">
+                </div>
+                <div class="card" id="blog-2">
+                    <div class="card-content">
+                        <h3>The Ultimate Guide to Traveling on a Budget: Tips and Hacks 🌍🎡</h3>
+                        <div class="blog-content hidden">
+                            <p>Traveling doesn’t have to cost a fortune (leave that to influencers booking private jets 🚁). Here’s how to live your best wanderlust life without breaking the bank:</p>
+                            <p><strong>"Skyscanner" Is Your BFF</strong><br>Flex those dates, use "Everywhere" as your destination, and snag the cheapest flights. Pro tip: Clear cookies before searching. 💧</p>
+                            <p><strong>Stay Local – But Make It Fun</strong><br>Hostels, Couchsurfing, and Airbnb’s "shared rooms" are your budget-friendly pals. Plus, you’ll meet some awesome peeps! 👋</p>
+                            <p><strong>Master the Art of Free Activities</strong><br>Hikes, local festivals, and museums with free entry days are a vibe. Who needs pricey tours anyway? 🎮</p>
+                            <p><strong>Street Food > Fancy Restaurants</strong><br>Taste the real flavors of a place without maxing out your credit card. Bonus: Insta-worthy food shots. 🍲</p>
+                            <p><strong>Embrace Public Transport</strong><br>Ditch those touristy taxis and hop on the bus or train. Not only is it cheap, but it’s also the best way to travel like a local. 🚋</p>
+                            <p>Your next adventure awaits! Where are you off to first? Drop it in the comments 🌍.</p>
+                        </div>
+                        <button class="explore-button" onclick="expandBlog(2)">Explore More</button>
+                    </div>
+                    <img src="/images/prewritten/travelling.png" alt="Technology Image" class="card-image">
+                </div>
+                <div class="card" id="blog-3">
+                    <div class="card-content">
+                        <h3>How AI Is Transforming the Creative Industry in 2024 🧠🖌️</h3>
+                        <div class="blog-content hidden">
+                            <p>AI isn’t coming for our creativity; it’s here to level us up! Here’s how Gen Z and Millennials are using AI to create the future:</p>
+                            <p><strong>Designs in Seconds 🎨</strong> Platforms like Canva AI are helping creators whip up designs faster than ever. Need a logo for your side hustle? Done in minutes. 🌟</p>
+                            <p><strong>Music Meets AI 🎵</strong> Artists are using AI to produce beats and even collaborate. (Looking at you, viral TikTok remixers! 🕺)</p>
+                            <p><strong>ChatGPT = Writing Bestie</strong> From brainstorming captions to drafting scripts, AI tools are making writing a breeze. 🔢</p>
+                            <p><strong>Personalized Marketing Magic 🚀</strong> AI-driven ads are so on point they feel like your Spotify Wrapped: scarily accurate and super engaging. 🎤</p>
+                            <p><strong>Virtual Reality x Creativity 🎮</strong> VR tools powered by AI are making game design and digital art immersive AF. Imagine creating a world… and then stepping right into it.</p>
+                            <p>TL;DR: AI is the ultimate creative sidekick. What’s your favorite AI tool right now? 👇</p>
+                        </div>
+                        <button class="explore-button" onclick="expandBlog(3)">Explore More</button>
+                    </div>
+                    <img src="/images/prewritten/ai.png" alt="AI Image" class="card-image">
+                </div>
+                <div class="card" id="blog-4">
+                    <div class="card-content">
+                        <h3>10 Delicious Plant-Based Recipes You Can Cook in Under 30 Minutes 🌱🍲</h3>
+                        <div class="blog-content hidden">
+                            <p>Short on time but still want to eat like a king/queen/vegan royalty? 🌈 Let’s get cooking with these quick and drool-worthy recipes!</p>
+                            <p><strong>Avocado Toast Remix 🍑</strong> Upgrade your toast with smashed avo, cherry tomatoes, and chili flakes. Add a drizzle of balsamic glaze for bougie vibes.</p>
+                            <p><strong>Chickpea Stir-Fry 🍜</strong> Toss chickpeas, veggies, and soy sauce in a pan. Boom – dinner is served.</p>
+                            <p><strong>Banana Oat Pancakes 🍔</strong> Blend oats, bananas, and almond milk. Fry ‘em up and enjoy the fluffiest pancakes ever.</p>
+                            <p><strong>Sweet Potato Fries 🍠</strong> Slice, season, bake. Dip in spicy mayo. Drooling yet?</p>
+                            <p><strong>Vegan Tacos 🌮</strong> Fill tortillas with black beans, salsa, and guac. Taco Tuesday just got a plant-based glow-up.</p>
+                            <p>Your taste buds are about to go wild. Which one are you trying first? 🍄</p>
+                        </div>
+                        <button class="explore-button" onclick="expandBlog(4)">Explore More</button>
+                    </div>
+                    <img src="/images/prewritten/plantbased.jpg" alt="Plant-Based Recipes" class="card-image">
+                </div>
+                <div class="card" id="blog-5">  
+                    <div class="card-content">
+                        <h3>The Hidden Gems of Productivity: Tools You’ve Never Heard Of ⌚️🛠️</h3>
+                        <div class="blog-content hidden">
+                            <p>Ready to boost your workflow? Forget the usual suspects like Notion and Trello. Here are the underrated gems:</p>
+                            <p><strong>Brain.fm 🎧</strong> Focus like a champ with AI-generated music designed to keep you in the zone.</p>
+                            <p><strong>Obsidian 📂</strong> A next-level note-taking app that’s perfect for your chaotic genius ideas.</p>
+                            <p><strong>Serene 🌳</strong> Helps you plan your day, block distractions, and smash goals. (Think Pomodoro, but chiller.)</p>
+                            <p><strong>Toggl 🕜</strong> Track your time like a pro. Perfect for freelancers juggling a million tasks.</p>
+                            <p><strong>Forest 🌳</strong> Stay off your phone and plant virtual trees. Save your productivity and the planet.</p>
+                            <p>Which one’s going on your download list? Let’s get productive! ⏳✨</p>
+                        </div>
+                        <button class="explore-button" onclick="expandBlog(5)">Explore More</button>
+                    </div>
+                    <img src="/images/prewritten/productivity.jpg" alt="Productivity Tools" class="card-image">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 My Blog</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
