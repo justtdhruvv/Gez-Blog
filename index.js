@@ -151,7 +151,7 @@ app.post("/update-post/:id", upload.single("photo"), (req, res) => {
             userPost[postIndex].postPhoto = `/uploads/${req.file.filename}`;
         }
 
-        res.redirect("/"); // Redirect to the main page afterTHE FOLLOWING COMMAND PROVES THAT THE WORK IS DONE  updating
+        res.redirect("/"); // Redirect to the main page after updating
     } else {
         res.status(404).send("Post not found.");
     }
