@@ -52,9 +52,6 @@ A modern, responsive blog web application built with Node.js, Express, and EJS. 
 
 **Dhruv Mali**
 - GitHub: [@justtdhruvv](https://github.com/justtdhruvv)
-- Email: dhruvmali345@gmail.com
 - LinkedIn: [Dhruv Mali](https://www.linkedin.com/in/dhruv-mali-38b519280/)
 
 ---
-
-**Made with 💻 and ☕ by Dhruv Mali**
