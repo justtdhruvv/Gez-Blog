@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - The GenZ Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <%- include('partials/header.ejs') %>
+
+    <button class="sidebar-toggle">☰</button>
+
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/nature">Nature</a></li>
+                <li><a href="/technology">Technology</a></li>
+                <li><a href="/space">Space</a></li>
+                <li><a href="/sports">Sports</a></li>
+                <li><a href="/games">Games</a></li>
+                <li><a href="/movies">Movies</a></li>
+                <li><a href="/education">Education</a></li>
+                <li><a href="/medical">Medical</a></li>
+            </ul>
+        </aside>
+        
+        <main class="content">
+            <section class="prewritten-posts">
+                <h2>Gaming & Technology</h2>
+                
 <div class="card" id="blog-1">
     <div class="card-content">
         <h2>CS2 vs VALORANT: The Great FPS Showdown of 2024</h2>
@@ -9,6 +41,7 @@
     </div>
     <img src="/images/games/fps-games.jpeg" alt="FPS Games">
 </div>
+
 <div class="card" id="blog-2">
     <div class="card-content">
         <h2>Gaming's Next Frontier: PS6 and Xbox's Cloud Revolution</h2>
@@ -20,6 +53,7 @@
     </div>
     <img src="/images/games/next-gen.jpeg" alt="Next Gen Gaming">
 </div>
+
 <div class="card" id="blog-3">
     <div class="card-content">
         <h2>2024's Most Anticipated Games: A Year of Gaming Giants</h2>
@@ -31,6 +65,7 @@
     </div>
     <img src="/images/games/upcomin.jpeg" alt="Upcoming Games">
 </div>
+
 <div class="card" id="blog-4">
     <div class="card-content">
         <h2>Mobile Gaming Evolution: Beyond Casual Play</h2>
@@ -42,6 +77,7 @@
     </div>
     <img src="/images/games/monilegaming.jpeg" alt="Mobile Gaming">
 </div>
+
 <div class="card" id="blog-5">
     <div class="card-content">
         <h2>AI in Gaming: Revolutionizing Development and Play</h2>
@@ -54,14 +90,14 @@
     <img src="/images/games/ai.jpeg" alt="AI in Gaming">
 </div>
 
-<div class="card" id="blog-6">
-    <div class="card-content">
-        <h2>VR and AR: Gaming's Next Reality</h2>
-        <div class="blog-preview">With Meta Quest 3's success and Apple Vision Pro's arrival, virtual and augmented reality gaming enters a new era of mainstream adoption...</div>
-        <div class="blog-content hidden">
-            Virtual and augmented reality are finally hitting their stride. Meta Quest 3's successful launch, selling over 1 million units in its first month, proves VR's mass-market potential. The headset's mixed reality capabilities and improved resolution (2064x2208 per eye) set new standards for consumer VR. Meanwhile, Apple Vision Pro's entry into the market brings unprecedented computing power and display technology (23 million pixels across two micro-OLED displays). Games are pushing these new capabilities to their limits. Beat Saber surpassed $500 million in revenue, showing VR's commercial viability. Half-Life: Alyx demonstrated that VR can deliver compelling narratives alongside immersive gameplay. Pokemon GO continues to generate over $1 billion annually, proving AR's lasting appeal. New titles like Arizona Sunshine 2 and Asgard's Wrath 2 showcase the platform's evolution. Hardware innovations are solving VR's traditional challenges. Pancake lenses reduce headset size, while eye-tracking enables foveated rendering for better performance. Haptic gloves from bHaptics and Manus bring tactile feedback to virtual interactions. The metaverse concept, despite initial skepticism, is gaining traction with platforms like VRChat hosting millions of user-created worlds. Looking ahead, mixed reality could become our primary computing interface. Apple Vision Pro's spatial computing concept suggests a future where physical and virtual worlds seamlessly blend. From virtual concerts attended by millions to immersive educational experiences, VR/AR is expanding the definition of what gaming can be. 🥽✨
-        </div>
-        <button onclick="expandBlog(6)">Explore More</button>
+            </section>
+        </main>
     </div>
-    <img src="/images/games/vr ar.jpeg" alt="VR Gaming">
-</div>
+
+    <footer>
+        <p>&copy; 2025 The GenZ Blog. All rights reserved.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

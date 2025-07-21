@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - The GenZ Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <button class="sidebar-toggle">☰</button>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/nature">Nature</a></li>
+                <li><a href="/technology">Technology</a></li>
+                <li><a href="/space">Space</a></li>
+                <li><a href="/sports">Sports</a></li>
+                <li><a href="/games">Games</a></li>
+                <li><a href="/movies">Movies</a></li>
+                <li><a href="/education">Education</a></li>
+                <li><a href="/medical">Medical</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section class="prewritten-posts">
+                <h2>Education & Learning</h2>
+                <%- include('partials/prewritten.ejs') %>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 The GenZ Blog. All rights reserved.</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const userPost = [];
 const contactRequests = []; // Array to store contact requests
+let nextPostId = 1; // Counter for unique post IDs
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
@@ -42,36 +43,50 @@ app.get("/contact", (req, res) => {
     });
 });
 
-app.get("/nature.ejs", (req, res) => {
+app.get("/nature", (req, res) => {
     res.render("nature.ejs");
 });
-app.get("/technology.ejs", (req, res) => {
+app.get("/technology", (req, res) => {
     res.render("technology.ejs");
 });
-app.get("/space.ejs", (req, res) => {
+app.get("/space", (req, res) => {
     res.render("space.ejs");
 });
-app.get("/sports.ejs", (req, res) => {
+app.get("/sports", (req, res) => {
     res.render("sports.ejs");
 });
-app.get("/games.ejs", (req, res) => {
+app.get("/games", (req, res) => {
     res.render("games.ejs");
 });
-app.get("/movies.ejs", (req, res) => {
+app.get("/movies", (req, res) => {
     res.render("movies.ejs");
 });
-app.get("/education.ejs", (req, res) => {
+app.get("/education", (req, res) => { 
     res.render("education.ejs");
 });
-app.get("/medical.ejs", (req, res) => {
+app.get("/medical", (req, res) => {
     res.render("medical.ejs");
 });
 app.post("/submit-post", upload.single("photo"), (req, res) => {
+    // Input validation
+    if (!req.body.title || !req.body.content) {
+        return res.status(400).send("Title and content are required.");
+    }
+    
+    if (req.body.title.length > 200) {
+        return res.status(400).send("Title too long (max 200 characters).");
+    }
+    
+    if (req.body.content.length > 5000) {
+        return res.status(400).send("Content too long (max 5000 characters).");
+    }
+    
     const newPost = {
-        id: userPost.length + 1,
-        postTitle: req.body["title"],
-        postContent: req.body["content"],
-        postPhoto: req.file ? `/uploads/${req.file.filename}` : null
+        id: nextPostId++,
+        postTitle: req.body.title.trim(),
+        postContent: req.body.content.trim(),
+        postPhoto: req.file ? `/uploads/${req.file.filename}` : null,
+        createdAt: new Date().toISOString()
     };
     userPost.push(newPost);
 
@@ -82,10 +97,22 @@ app.post("/submit-post", upload.single("photo"), (req, res) => {
 });
 
 app.post("/submit-contact-request", (req, res) => {
+    // Input validation
+    if (!req.body.contactName || !req.body.contactEmail || !req.body.contactPhone) {
+        return res.status(400).send("All fields are required.");
+    }
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(req.body.contactEmail)) {
+        return res.status(400).send("Invalid email format.");
+    }
+    
     const newContactRequest = {
-        name: req.body.contactName,
-        email: req.body.contactEmail,
-        phone: req.body.contactPhone
+        name: req.body.contactName.trim(),
+        email: req.body.contactEmail.trim(),
+        phone: req.body.contactPhone.trim(),
+        submittedAt: new Date().toISOString()
     };
     contactRequests.push(newContactRequest);
 
@@ -93,7 +120,7 @@ app.post("/submit-contact-request", (req, res) => {
 
     res.render("contact.ejs", {
         message: "Request submitted successfully",
-        contactRequests: [] // Do not pass the contactRequests array to the template
+        contactRequests // Pass the contactRequests array to show them
     });
 });
 
@@ -104,7 +131,7 @@ app.get("/edit-post/:id", (req, res) => {
 
     if (postToEdit) {
         res.render("index.ejs", {
-            userPost, // All posts to display
+            userPost, // All posts to display        
             editingPost: postToEdit // Post to edit
         });
     } else {
@@ -124,12 +151,12 @@ app.post("/update-post/:id", upload.single("photo"), (req, res) => {
             userPost[postIndex].postPhoto = `/uploads/${req.file.filename}`;
         }
 
-        res.redirect("/"); // Redirect to the main page after updating
+        res.redirect("/"); // Redirect to the main page afterTHE FOLLOWING COMMAND PROVES THAT THE WORK IS DONE  updating
     } else {
         res.status(404).send("Post not found.");
     }
 });
-
+ 
 app.post("/delete-post/:id", (req, res) => {
     const postId = parseInt(req.params.id, 10); // Extract and parse the post ID from the route parameter
 
@@ -140,6 +167,36 @@ app.post("/delete-post/:id", (req, res) => {
     res.redirect("/"); // Redirect to the homepage after deletion
 });
 
+// Add error handling middleware
+app.use((req, res, next) => {
+    res.status(404).send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Page Not Found - The GenZ Blog</title>
+            <link rel="stylesheet" href="/styles.css">
+        </head>
+        <body>
+            <div style="text-align: center; padding: 50px;">
+                <h1>404 - Page Not Found</h1>
+                <p>The page you're looking for doesn't exist.</p>
+                <a href="/" style="color: #007bff; text-decoration: none;">Go back to home</a>
+            </div>
+        </body>
+        </html>
+    `);
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+});
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
+
+

@@ -1,31 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - The GenZ Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <button class="sidebar-toggle">☰</button>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/nature">Nature</a></li>
+                <li><a href="/technology">Technology</a></li>
+                <li><a href="/space">Space</a></li>
+                <li><a href="/sports">Sports</a></li>
+                <li><a href="/games">Games</a></li>
+                <li><a href="/movies">Movies</a></li>
+                <li><a href="/education">Education</a></li>
+                <li><a href="/medical">Medical</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section class="prewritten-posts">
+                <h2>Movies & Entertainment</h2>
+                
 <div class="card" id="blog-1">
     <div class="card-content">
         <h2>2025 Hollywood Releases: A Year of Blockbusters and Surprises</h2>
         <div class="blog-preview">Get ready to mark your calendars because 2025 is set to deliver some of the biggest Hollywood movies we've seen yet...</div>
         <div class="blog-content hidden">
-            2025 is shaping up to be a cinematic feast, with sequels, reboots, and original films dominating the slate. Marvel fans, rejoice—Phase 6 will kick off with **"Avengers: Eternity's Edge"**, promising multiverse madness. DC isn’t holding back either, with **"The Brave and the Bold"** introducing a new Batman to the mix. Sci-fi lovers should keep an eye on **"Dune: The Final Horizon"**, completing Denis Villeneuve’s epic adaptation. And if you’re into nostalgia, **"Jurassic World: Reign"** promises to take the franchise to uncharted territories. Meanwhile, indie cinema is also stepping up with heartfelt stories and gripping narratives. Expect films like **"The Time Keeper"** and **"Luminous"** to make waves during award season. Hollywood in 2025? It's not just about the big names—it’s about redefining storytelling for a new era. 🎥🍿
+            2025 is shaping up to be a cinematic feast, with sequels, reboots, and original films dominating the slate. Marvel fans, rejoice—Phase 6 will kick off with **"Avengers: Eternity's Edge"**, promising multiverse madness. DC isn't holding back either, with **"The Brave and the Bold"** introducing a new Batman to the mix. Sci-fi lovers should keep an eye on **"Dune: The Final Horizon"**, completing Denis Villeneuve's epic adaptation. And if you're into nostalgia, **"Jurassic World: Reign"** promises to take the franchise to uncharted territories. Meanwhile, indie cinema is also stepping up with heartfelt stories and gripping narratives. Expect films like **"The Time Keeper"** and **"Luminous"** to make waves during award season. Hollywood in 2025? It's not just about the big names—it's about redefining storytelling for a new era. 🎥🍿
         </div>
         <button onclick="expandBlog(1)">Explore More</button>
     </div>
     <img src="/images/movies/ipcomin 25.jpeg" alt="Hollywood Film">
 </div>
+
 <div class="card" id="blog-2">
     <div class="card-content">
-        <h2>The Anime Industry: Upcoming Series You Can’t Miss</h2>
-        <div class="blog-preview">2025 is bringing a new wave of anime that’s going to redefine genres and captivate fans worldwide...</div>
+        <h2>The Anime Industry: Upcoming Series You Can't Miss</h2>
+        <div class="blog-preview">2025 is bringing a new wave of anime that's going to redefine genres and captivate fans worldwide...</div>
         <div class="blog-content hidden">
-            The anime world never sleeps, and 2025 is proof of that. **"Attack on Titan: Beyond the Walls"** is set to explore new horizons after the main story’s conclusion, while **"Jujutsu Kaisen: Dark Curses"** dives deeper into the lore of cursed techniques. Love classic anime? **"Naruto: The Next Generation Chronicles"** will bring nostalgic vibes with a modern twist. On the original front, **"Stellar Dreams"** promises a visually stunning space adventure, and **"Aether's Symphony"** blends music and magic in a unique storytelling experience. With streaming platforms investing heavily in anime, the industry is expanding globally like never before. Whether you’re a shonen fanatic or a slice-of-life enthusiast, 2025 has something special for you. 🌟🎴
+            The anime world never sleeps, and 2025 is proof of that. **"Attack on Titan: Beyond the Walls"** is set to explore new horizons after the main story's conclusion, while **"Jujutsu Kaisen: Dark Curses"** dives deeper into the lore of cursed techniques. Love classic anime? **"Naruto: The Next Generation Chronicles"** will bring nostalgic vibes with a modern twist. On the original front, **"Stellar Dreams"** promises a visually stunning space adventure, and **"Aether's Symphony"** blends music and magic in a unique storytelling experience. With streaming platforms investing heavily in anime, the industry is expanding globally like never before. Whether you're a shonen fanatic or a slice-of-life enthusiast, 2025 has something special for you. 🌟🎴
         </div>
         <button onclick="expandBlog(2)">Explore More</button>
     </div>
     <img src="/images/movies/jjk.jpeg" alt="Anime">
 </div>
+
 <div class="card" id="blog-3">
     <div class="card-content">
         <h2>Streaming Wars 2025: The Battle for Your Screen</h2>
-        <div class="blog-preview">Netflix, Disney+, and newcomers are fighting it out for dominance in the streaming world. Here’s what’s changing...</div>
+        <div class="blog-preview">Netflix, Disney+, and newcomers are fighting it out for dominance in the streaming world. Here's what's changing...</div>
         <div class="blog-content hidden">
-            The streaming wars are more intense than ever. **Netflix** is doubling down on interactive content with titles like **"Choose Your Fate"**, while **Disney+** expands its Marvel and Star Wars universes. Meanwhile, **Apple TV+** is all about high-quality storytelling, with shows like **"Ethereal"** and **"Arcadia Rising"** generating buzz. **HBO Max**, rebranded as Max Prime, continues to focus on gritty dramas and iconic franchises. New players like **NebulaTV** are making waves with niche, genre-specific content. The result? A crowded marketplace that’s pushing innovation and competition to new heights. Pro tip: Bundle deals are your wallet’s best friend in 2025. 📺✨
+            The streaming wars are more intense than ever. **Netflix** is doubling down on interactive content with titles like **"Choose Your Fate"**, while **Disney+** expands its Marvel and Star Wars universes. Meanwhile, **Apple TV+** is all about high-quality storytelling, with shows like **"Ethereal"** and **"Arcadia Rising"** generating buzz. **HBO Max**, rebranded as Max Prime, continues to focus on gritty dramas and iconic franchises. New players like **NebulaTV** are making waves with niche, genre-specific content. The result? A crowded marketplace that's pushing innovation and competition to new heights. Pro tip: Bundle deals are your wallet's best friend in 2025. 📺✨
         </div>
         <button onclick="expandBlog(3)">Explore More</button>
     </div>
@@ -35,33 +65,33 @@
 <div class="card" id="blog-4">
     <div class="card-content">
         <h2>The Future of Superhero Movies: Reinventing the Genre</h2>
-        <div class="blog-preview">Superhero fatigue? Not so fast. The genre is evolving, and here’s how studios are keeping it fresh...</div>
+        <div class="blog-preview">Superhero fatigue? Not so fast. The genre is evolving, and here's how studios are keeping it fresh...</div>
         <div class="blog-content hidden">
-            Superhero movies aren’t going anywhere, but they are changing. 2025 is all about grounded storytelling and diverse representation. Marvel’s **"Eternals: New Dawn"** explores philosophical themes, while DC’s **"Static Shock"** brings a fresh perspective on urban heroism. Studios are also embracing smaller-scale stories, like **"Spider-Man: Homegrown"**, which focuses on Peter Parker’s community. Expect more experimentation with animation too. After the success of **"Spider-Man: Across the Spider-Verse"**, films like **"The Multiverse Chronicles"** are set to push the boundaries of visual storytelling. The superhero genre isn’t dying—it’s evolving. 🦸‍♂️🦹‍♀️
+            Superhero movies aren't going anywhere, but they are changing. 2025 is all about grounded storytelling and diverse representation. Marvel's **"Eternals: New Dawn"** explores philosophical themes, while DC's **"Static Shock"** brings a fresh perspective on urban heroism. Studios are also embracing smaller-scale stories, like **"Spider-Man: Homegrown"**, which focuses on Peter Parker's community. Expect more experimentation with animation too. After the success of **"Spider-Man: Across the Spider-Verse"**, films like **"The Multiverse Chronicles"** are set to push the boundaries of visual storytelling. The superhero genre isn't dying—it's evolving. 🦸‍♂️🦹‍♀️
         </div>
         <button onclick="expandBlog(4)">Explore More</button>
     </div>
     <img src="/images/movies/spidetman.jpeg" alt="Superhero Movie">
 </div>
+
 <div class="card" id="blog-5">
     <div class="card-content">
         <h2>Bollywood Evolution: Breaking Boundaries</h2>
-        <div class="blog-preview">Bollywood is going global, and it’s not just about dance numbers anymore. Here’s what’s driving the change...</div>
+        <div class="blog-preview">Bollywood is going global, and it's not just about dance numbers anymore. Here's what's driving the change...</div>
         <div class="blog-content hidden">
-            Bollywood in 2025 is a melting pot of cultures and genres. Directors are experimenting with international collaborations, as seen in films like **"Global Beat"**, a co-production with Hollywood. Storytelling is getting sharper too. Movies like **"Parallel Lives"** explore complex narratives, blending science fiction with emotional depth. Meanwhile, **"The Hidden Melody"** redefines the musical genre with its minimalist approach. Streaming platforms are also fueling the change, giving indie filmmakers a chance to shine. The result? A Bollywood that’s more diverse, inclusive, and ready to conquer the world. 🎬🇮🇳
+            Bollywood in 2025 is a melting pot of cultures and genres. Directors are experimenting with international collaborations, as seen in films like **"Global Beat"**, a co-production with Hollywood. Storytelling is getting sharper too. Movies like **"Parallel Lives"** explore complex narratives, blending science fiction with emotional depth. Meanwhile, **"The Hidden Melody"** redefines the musical genre with its minimalist approach. Streaming platforms are also fueling the change, giving indie filmmakers a chance to shine. The result? A Bollywood that's more diverse, inclusive, and ready to conquer the world. 🎬🇮🇳
         </div>
         <button onclick="expandBlog(5)">Explore More</button>
     </div>
     <img src="/images/movies/bolly.jpeg" alt="Bollywood Evolution">
 </div>
-<div class="card" id="blog-6">
-    <div class="card-content">
-        <h2>Indian OTT Content: A Golden Age of Storytelling</h2>
-        <div class="blog-preview">From thrillers to period dramas, Indian OTT platforms are delivering world-class content like never before...</div>
-        <div class="blog-content hidden">
-            Indian OTT platforms like **Netflix India**, **Amazon Prime**, and **SonyLIV** are on fire. Shows like **"The Last Mughal"** and **"Cyber Shadows"** are setting new benchmarks in storytelling. Regional content is also thriving. Tamil, Telugu, and Bengali shows are gaining national and global audiences, thanks to subtitles and dubbing. Meanwhile, platforms like **Hotstar** are investing in high-budget epics like **"Mahabharata: The Untold Saga"**. The key to this success? Bold, experimental narratives and stellar performances. Indian OTT isn’t just competing locally—it’s going global. 🌍📱
-        </div>
-        <button onclick="expandBlog(6)">Explore More</button>
+
+            </section>
+        </main>
     </div>
-    <img src="/images/movies/Screenshot 2024-12-27 121158.png" alt="Indian OTT Content">
-</div>
+    <footer>
+        <p>&copy; 2025 The GenZ Blog. All rights reserved.</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>

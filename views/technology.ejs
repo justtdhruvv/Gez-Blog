@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology - The GenZ Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <%- include('partials/header.ejs') %>
+
+    <button class="sidebar-toggle">☰</button>
+
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/nature">Nature</a></li>
+                <li><a href="/technology">Technology</a></li>
+                <li><a href="/space">Space</a></li>
+                <li><a href="/sports">Sports</a></li>
+                <li><a href="/games">Games</a></li>
+                <li><a href="/movies">Movies</a></li>
+                <li><a href="/education">Education</a></li>
+                <li><a href="/medical">Medical</a></li>
+            </ul>
+        </aside>
+        
+        <main class="content">
+            <section class="prewritten-posts">
+                <h2>Technology Posts</h2>
+                
 <div class="card" id="blog-1">
     <div class="card-content">
         <h2>AI in Everyday Life: How It's Transforming the Way We Live</h2>
@@ -7,39 +39,39 @@
         </div>
         <button onclick="expandBlog(1)">Explore More</button>
     </div>
-    <img src="/images/technology/ai-cloud-concept-with-robot-arms.jpg" alt="AI Technology">
+    <img src="/images/technology/chip-circuit-board-abstract-technology-background.jpg" alt="AI Technology">
 </div>
 
 <div class="card" id="blog-2">
     <div class="card-content">
-        <h2>Quantum Computing: The Future of Problem-Solving</h2>
-        <div class="blog-preview">Imagine a computer so powerful it could solve in seconds what would take a traditional computer millions of years. Welcome to the world of quantum computing...</div>
+        <h2>5G Revolution: Speed That Changes Everything</h2>
+        <div class="blog-preview">5G isn't just about faster downloads—it's about transforming how we live, work, and connect. With speeds up to 100 times faster than 4G...</div>
         <div class="blog-content hidden">
-            Unlike classical computers that process information in bits (0s and 1s), quantum computers use qubits, which can exist in multiple states simultaneously. This concept, called superposition, allows quantum computers to process vast amounts of data in parallel. Why does this matter? Think about problems like drug discovery, where researchers need to analyze countless molecular combinations to find the perfect match. Or climate modeling, which involves simulating complex weather patterns. Quantum computing makes these tasks not just faster but feasible. Companies like IBM, Google, and even startups are racing to develop functional quantum computers.
+            5G isn't just about faster downloads—it's about transforming how we live, work, and connect. With speeds up to 100 times faster than 4G, 5G enables real-time communication between devices, making smart cities, autonomous vehicles, and augmented reality experiences a reality. Imagine downloading a full HD movie in seconds, or having surgery performed remotely by a robot controlled by a doctor thousands of miles away. That's the power of 5G. The ultra-low latency means virtual meetings will feel more natural, online gaming will be lag-free, and IoT devices will communicate seamlessly. However, 5G deployment comes with challenges, including infrastructure costs and coverage gaps in rural areas. 📡🚀
         </div>
         <button onclick="expandBlog(2)">Explore More</button>
     </div>
-    <img src="/images/technology/chip-circuit-board-abstract-technology-background.jpg" alt="Quantum Computing">
+    <img src="/images/technology/5g.jpeg" alt="5G Technology">
 </div>
 
 <div class="card" id="blog-3">
     <div class="card-content">
-        <h2>Futuristic Tech: Flying Cars and Smart Cities</h2>
-        <div class="blog-preview">Remember when flying cars were just a thing in cartoons? Well, they're real now. Companies like Jetson, AeroMobil, and even Uber are working on vehicles...</div>
+        <h2>Cybersecurity in 2025: Protecting Your Digital Life</h2>
+        <div class="blog-preview">As we become more connected, cybersecurity threats evolve too. From sophisticated phishing attacks to AI-powered malware...</div>
         <div class="blog-content hidden">
-            But futuristic tech doesn't stop at flying cars. Smart cities are also becoming a reality. These urban hubs use IoT (Internet of Things) sensors, AI, and automation to optimize everything from traffic flow to energy consumption. Think of streetlights that dim when no one's around, garbage bins that alert collectors when full, and apps that guide you to the nearest open parking spot. Take Singapore, for example. The city has implemented smart traffic systems that adapt in real time, reducing congestion. In Dubai, flying taxis are being tested to revolutionize public transport.
+            As we become more connected, cybersecurity threats evolve too. From sophisticated phishing attacks to AI-powered malware, cybercriminals are getting smarter. But so are the defenders. Modern cybersecurity uses machine learning to detect unusual patterns, behavioral analysis to spot insider threats, and zero-trust architecture that assumes every user and device could be compromised. For individuals, this means using strong, unique passwords for every account, enabling two-factor authentication, and staying updated on the latest scams. For businesses, it means investing in employee training, regular security audits, and incident response plans. Remember: cybersecurity isn't just about technology—it's about creating a culture of security awareness. 🔒💻
         </div>
         <button onclick="expandBlog(3)">Explore More</button>
     </div>
-    <img src="/images/technology/futureecity.jpeg" alt="Future Technology">
+    <img src="/images/technology/cybersecurity.jpeg" alt="Cybersecurity">
 </div>
 
 <div class="card" id="blog-4">
     <div class="card-content">
-        <h2>The Metaverse: Is It Just a Hype or the Next Big Thing?</h2>
-        <div class="blog-preview">If the internet is 2D, the metaverse is its 3D evolution—a fully immersive digital universe where you can socialize, work, shop, and even party...</div>
+        <h2>The Metaverse: Virtual Worlds Becoming Reality</h2>
+        <div class="blog-preview">The metaverse isn't just gaming—it's a new digital frontier where work, play, and social interaction converge in virtual spaces...</div>
         <div class="blog-content hidden">
-            Platforms like Decentraland, Roblox, and Meta's Horizon Worlds are already laying the groundwork. Imagine attending a concert with your friends, but instead of driving to a venue, you're vibing in a virtual stadium with avatars. Or picture yourself shopping for clothes online and trying them on virtually before hitting "Add to Cart." The metaverse isn't just for gamers. Companies are using it for virtual meetings, real estate is being sold as NFTs, and artists are hosting virtual exhibitions. It's a new frontier for creativity, commerce, and connection.
+            The metaverse isn't just gaming—it's a new digital frontier where work, play, and social interaction converge in virtual spaces. Companies like Meta (formerly Facebook), Microsoft, and Epic Games are building immersive platforms where you can attend meetings as an avatar, buy virtual real estate, or hang out with friends in digital worlds. Virtual concerts, art galleries, and shopping experiences are already happening. The technology behind the metaverse includes VR headsets, AR glasses, haptic feedback, and blockchain for digital ownership. While still in early stages, the metaverse promises to revolutionize how we work remotely, socialize, and consume entertainment. Critics point to concerns about privacy, addiction, and the digital divide, but proponents see it as the next evolution of the internet. 🥽🌐
         </div>
         <button onclick="expandBlog(4)">Explore More</button>
     </div>
@@ -48,24 +80,24 @@
 
 <div class="card" id="blog-5">
     <div class="card-content">
-        <h2>Cybersecurity: Winning the War Against Hackers</h2>
-        <div class="blog-preview">Cybersecurity might not be the flashiest topic, but in a world where your data is currency, it's absolutely critical...</div>
+        <h2>Smart Cities: Technology Making Urban Life Better</h2>
+        <div class="blog-preview">Smart cities use IoT sensors, AI, and data analytics to optimize everything from traffic flow to energy consumption...</div>
         <div class="blog-content hidden">
-            Every day, hackers are finding new ways to exploit vulnerabilities. From phishing emails that trick you into sharing passwords to ransomware attacks that lock entire companies out of their systems, the threats are real and evolving. Thankfully, so are the defenses. AI is now being used to detect and neutralize cyber threats before they cause damage. Biometrics, like facial recognition and fingerprint scanning, are making it harder for unauthorized users to access sensitive data. And let's not forget encryption—the digital equivalent of locking your valuables in a vault.
+            Smart cities use IoT sensors, AI, and data analytics to optimize everything from traffic flow to energy consumption. Street lights that adjust brightness based on foot traffic, waste bins that signal when they're full, and parking apps that guide you to available spots—this is the reality in cities like Singapore, Barcelona, and Amsterdam. Smart traffic systems reduce congestion by analyzing real-time data and adjusting signal timing. Energy grids become more efficient by balancing supply and demand automatically. Public safety improves with predictive policing and emergency response optimization. The goal isn't just efficiency—it's sustainability and quality of life. However, smart cities also raise questions about privacy and surveillance. How much data is too much? The challenge is finding the right balance between convenience and privacy. 🏙️📊
         </div>
         <button onclick="expandBlog(5)">Explore More</button>
     </div>
-    <img src="/images/technology/cybersecurity.jpeg" alt="Cybersecurity">
+    <img src="/images/technology/future city.jpeg" alt="Smart Cities">
 </div>
 
-<div class="card" id="blog-6">
-    <div class="card-content">
-        <h2>5G and Beyond: The Future of Connectivity</h2>
-        <div class="blog-preview">Remember the days when it took forever to load a YouTube video? Thanks to 5G, those days are long gone. This next-gen network isn't just faster...</div>
-        <div class="blog-content hidden">
-            5G offers ultra-low latency, meaning there's almost no lag. This is crucial for things like autonomous cars, where even a millisecond delay can mean the difference between safety and disaster. It also enables remote surgeries, where doctors can operate on patients from thousands of miles away with robotic precision. And then there's entertainment. With 5G, you can stream 4K movies on the go, experience lag-free gaming, and even dive into AR and VR experiences without a hitch. But wait, there's more. Researchers are already exploring 6G, which promises speeds 100 times faster than 5G.
-        </div>
-        <button onclick="expandBlog(6)">Explore More</button>
+            </section>
+        </main>
     </div>
-    <img src="/images/technology/5g.jpeg" alt="5G Technology">
-</div>
+
+    <footer>
+        <p>&copy; 2025 The GenZ Blog. All rights reserved.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

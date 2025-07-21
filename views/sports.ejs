@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports - The GenZ Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <button class="sidebar-toggle">☰</button>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/nature">Nature</a></li>
+                <li><a href="/technology">Technology</a></li>
+                <li><a href="/space">Space</a></li>
+                <li><a href="/sports">Sports</a></li>
+                <li><a href="/games">Games</a></li>
+                <li><a href="/movies">Movies</a></li>
+                <li><a href="/education">Education</a></li>
+                <li><a href="/medical">Medical</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section class="prewritten-posts">
+                <h2>Sports & Fitness</h2>
+                
 <div class="card" id="blog-1">
     <div class="card-content">
         <h2>Champions League Drama: The Road to Wembley 2024</h2>
@@ -34,8 +62,6 @@
     <img src="/images/sports/nba.jpeg" alt="NBA">
 </div>
 
-
-
 <div class="card" id="blog-4">
     <div class="card-content">
         <h2>Cricket's T20 Revolution: IPL 2024 Changes the Game Again</h2>
@@ -47,7 +73,6 @@
     </div>
     <img src="/images/sports/ipl.jpeg" alt="IPL Cricket">
 </div>
-
 
 <div class="card" id="blog-5">
     <div class="card-content">
@@ -61,14 +86,12 @@
     <img src="/images/sports/tennis.jpeg" alt="Tennis">
 </div>
 
-<div class="card" id="blog-6">
-    <div class="card-content">
-        <h2>Paris Olympics 2024: A Modern Games in a Historic City</h2>
-        <div class="blog-preview">The Olympics return to Paris after 100 years. From urban sports to sustainability initiatives, these games are blending tradition with innovation in unprecedented ways...</div>
-        <div class="blog-content hidden">
-            Paris 2024 is setting new standards for the Olympic Games. This historic return to the City of Light, exactly 100 years after it last hosted the Olympics, promises to be revolutionary in multiple ways. The organizing committee has reimagined what's possible for a modern Olympics while honoring the games' rich heritage. Breaking (breakdancing) makes its Olympic debut, reflecting the games' adaptation to urban culture. The competition will take place in the iconic Place de la Concorde, transforming this historic square into a showcase of modern street culture. Meanwhile, the surfing competitions will be held in Tahiti's legendary Teahupo'o waves, marking the longest distance between Olympic venues ever. Sustainability isn't just a buzzword for Paris 2024 - it's a core mission. The games will use 95% existing or temporary venues, significantly reducing their environmental impact. All venues will be powered by renewable energy, and the Olympic Village is designed to become a sustainable neighborhood after the games. The organizers are targeting a 50% reduction in carbon emissions compared to previous games. Historic Paris itself becomes an athlete. The Palace of Versailles will host equestrian events, beach volleyball will take place at the foot of the Eiffel Tower, and archery will be contested at Les Invalides. Urban sports will transform Place de la Concorde into an action sports arena. Athletes' experience has been prioritized with innovative solutions for the notorious Paris summer heat. Underground cooling systems and extensive green spaces are being implemented. The Olympic Village emphasizes sustainability and comfort, setting new standards for athlete accommodation. With new sports like sport climbing and skateboarding joining traditional events, Paris 2024 represents the perfect blend of heritage and progress. These games aren't just about athletic achievement - they're about showing how major sporting events can be environmentally responsible while pushing the boundaries of innovation. 🏅🗼
-        </div>
-        <button onclick="expandBlog(6)">Explore More</button>
+            </section>
+        </main>
     </div>
-    <img src="/images/sports/olympics.jpeg" alt="Olympics">
-</div>
+    <footer>
+        <p>&copy; 2025 The GenZ Blog. All rights reserved.</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>
